@@ -306,7 +306,7 @@ body {
 }
 
 .card-container {
-  padding: 160px 30px 20px 30px;
+  padding: 180px 30px 20px 30px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   grid-gap: 20px;
@@ -316,13 +316,15 @@ body {
   padding: 12px;
   margin: 5px;
   border: none;
-  border-radius: 10px;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #ffffff, #f7f7f7);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
 .card-1:hover {
   transform: scale(1.05);
-  box-shadow: 4px 4px 8px #00000057;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, #f7f7f7, #ffffff);
 }
 
 .card-wrapper {
@@ -330,6 +332,8 @@ body {
   height: 250px;
   margin-bottom: 10px;
   position: relative;
+  overflow: hidden; /* Ensure content doesn't overflow */
+  border-radius: 12px; /* Match card border radius */
 }
 
 .card-image {
@@ -337,33 +341,42 @@ body {
   height: 100%;
   border-radius: 12px;
   object-fit: cover;
+  transition: transform 0.3s ease;
 }
+.card-wrapper:hover .card-image {
+  transform: scale(1.1); /* Slight zoom on hover */
+}
+
 .upload {
   position: absolute;
   top: 15px;
   right: 14px;
-  width: 35px;
-  height: 35px;
+  width: 40px;
+  height: 40px;
   cursor: pointer;
   border-radius: 50%;
-  background-color: #fcfcfcc0;
+  background-color: rgba(252, 252, 252, 0.9);
   padding: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 .upload:hover {
-  background-color: #f7f7f7;
+  background-color: #e0e0e0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .card-1 span {
   font-size: 0.95rem;
   display: block;
   color: var(--secondary-color);
-  line-height: 1.2;
-  margin-bottom: 0;
+  line-height: 1.4;
+  margin-bottom: 10px; /* Adjusted for better spacing */
   font-weight: 500;
+  transition: color 0.3s ease;
 }
-
 .card-1 span:nth-child(3) {
   color: var(--primary-color);
+  font-size: 1.1rem; /* Slightly larger font size for emphasis */
 }
 
 .card-container-2 {
@@ -373,10 +386,16 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   grid-gap: 20px;
 }
+
 .card-title {
   font-size: 1.8rem;
   color: var(--secondary-color);
   padding: 10px 45px;
+  text-align: center;
+  transition: color 0.3s ease;
+}
+.card-title:hover {
+  color: var(--primary-color); /* Change color on hover */
 }
 
 @media (max-width: 576px) {
@@ -389,9 +408,9 @@ body {
   }
   .card-title {
     font-size: 1.5rem;
-    text-align: center;
   }
 }
+
 
 .footer-container {
   background-color: #eeeded;
